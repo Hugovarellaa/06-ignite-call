@@ -1,3 +1,4 @@
+import { Text } from "@ignite-ui/react";
 import Head from "next/head";
 
 export default function Home() {
@@ -10,7 +11,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <h1>ola mundo</h1>
+        <Text>ola mundo</Text>
       </main>
     </>
   );
