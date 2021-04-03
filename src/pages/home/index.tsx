@@ -1,5 +1,9 @@
-import { Text } from '@ignite-ui/react'
+import { Heading, Text } from '@ignite-ui/react'
 import Head from 'next/head'
+import { Container, Hero, Preview } from './styles'
+
+import Image from 'next/image'
+import previewImage from '../../assets/calendar.png'
 
 export default function Home() {
   return (
@@ -10,9 +14,21 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>
-        <Text>ola mundo</Text>
-      </main>
+      <div>
+        <Container>
+          <Hero>
+            <Heading size="4xl">Agendamento descomplicado</Heading>
+            <Text size="lg">
+              Conecte seu calendário e permita que as pessoas marquem
+              agendamentos no seu tempo livre.
+            </Text>
+          </Hero>
+
+          <Preview>
+            <Image src={previewImage} alt="Calendário" />
+          </Preview>
+        </Container>
+      </div>
     </>
   )
 }
