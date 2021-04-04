@@ -25,7 +25,13 @@ export default function Home() {
           </Hero>
 
           <Preview>
-            <Image src={previewImage} alt="Calendário" />
+            <Image
+              src={previewImage}
+              alt="Calendário"
+              quality={100}
+              height={400}
+              priority
+            />
           </Preview>
         </Container>
       </div>
