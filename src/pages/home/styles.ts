@@ -26,4 +26,11 @@ export const Hero = styled('div', {
   },
 })
 
-export const Preview = styled('div', {})
+export const Preview = styled('div', {
+  paddingRight: '$8',
+  overflow: 'hidden',
+
+  '@media(max-width: 600px)': {
+    display: 'none',
+  },
+})
