@@ -9,7 +9,7 @@ export function ClaimUsernameForm() {
       {/* @ts-ignore */}
       <TextInput size="sm" prefix="ignite.com/" placeholder="seu-usuario" />
       <Button type="submit" size="sm">
-        Criar conta com Google
+        Reservar
         <ArrowRight />
       </Button>
     </Form>
