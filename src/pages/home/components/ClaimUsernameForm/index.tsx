@@ -5,7 +5,7 @@ import { Form } from './styles'
 
 export function ClaimUsernameForm() {
   return (
-    <Form>
+    <Form as="form">
       {/* @ts-ignore */}
       <TextInput size="sm" prefix="ignite.com/" placeholder="seu-usuario" />
       <Button type="submit" size="sm">
