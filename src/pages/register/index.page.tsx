@@ -5,7 +5,7 @@ import { Button, Heading, MultiStep, Text, TextInput } from '@ignite-ui/react'
 import { ArrowRight } from '@phosphor-icons/react'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
-import { Container, Form, Header } from './styles'
+import { Container, Form, FormError, Header } from './styles'
 
 const registerFormSchema = z.object({
   username: z
@@ -54,12 +54,18 @@ export default function Register() {
             placeholder="seu-usuário"
             {...register('username')}
           />
+          {errors.username && (
+            <FormError size="sm">{errors.username.message}</FormError>
+          )}
         </label>
 
         <label>
           <Text size="sm">Nome completo</Text>
           {/* @ts-ignore */}
           <TextInput placeholder="Seu nome" {...register('name')} />
+          {errors.name && (
+            <FormError size="sm">{errors.name.message}</FormError>
+          )}
         </label>
 
         <Button type="submit" disabled={isSubmitting}>
