@@ -44,8 +44,10 @@ export default function Register() {
       })
     } catch (err) {
       if (err instanceof AxiosError && err?.response?.data?.message) {
-        alert('Nao foi possível cadastrar o username, ja existir esse username')
         console.log(err)
+        return alert(
+          'Nao foi possível cadastrar o username, ja existir esse username',
+        )
       }
       console.log(err)
     }
