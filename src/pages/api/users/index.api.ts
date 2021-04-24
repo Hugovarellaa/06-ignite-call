@@ -1,6 +1,7 @@
 // http://localhost:3000/api/users
 
 import type { NextApiRequest, NextApiResponse } from 'next'
+import { setCookie } from 'nookies'
 import { prisma } from '../../../lib/prisma'
 
 export default async function handler(
@@ -28,6 +29,18 @@ export default async function handler(
         username,
       },
     })
+
+    setCookie(
+      {
+        res,
+      },
+      '@ignite-call:userID',
+      user.id,
+      {
+        maxAge: 60 * 60 * 24 * 7, // 7days
+        path: '/',
+      },
+    )
 
     return res.status(201).json(user)
   } else {
