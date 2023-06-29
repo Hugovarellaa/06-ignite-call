@@ -19,6 +19,12 @@ export const authOptions: NextAuthOptions = {
 
   callbacks: {
     async signIn({ user, account, profile, email, credentials }) {
+      if (
+        !account?.scope?.includes('https://www.googleapis.com/auth/calendar')
+      ) {
+        return '/register/connect-calendar/?error=permission'
+      }
+
       return true
     },
     async redirect({ url, baseUrl }) {
