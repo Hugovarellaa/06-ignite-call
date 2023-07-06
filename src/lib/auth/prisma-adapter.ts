@@ -103,9 +103,23 @@ async function PrismaAdapter(): Adapter {
       })
     },
 
-    async unlinkAccount({ providerAccountId, provider }) {},
+    // async unlinkAccount({ providerAccountId, provider }) {},
 
-    async createSession({ sessionToken, userId, expires }) {},
+    async createSession({ sessionToken, userId, expires }) {
+      await prisma.session.create({
+        data: {
+          user_id: userId,
+          expires,
+          session_token: sessionToken,
+        },
+      })
+
+      return {
+        sessionToken,
+        userId,
+        expires,
+      }
+    },
 
     async getSessionAndUser(sessionToken) {},
 
