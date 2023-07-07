@@ -121,7 +121,32 @@ async function PrismaAdapter(): Adapter {
       }
     },
 
-    async getSessionAndUser(sessionToken) {},
+    async getSessionAndUser(sessionToken) {
+      const { user, ...session } = await prisma.session.findUniqueOrThrow({
+        where: {
+          session_token: sessionToken,
+        },
+        include: {
+          user: true,
+        },
+      })
+
+      return {
+        session: {
+          userId: session.user_id,
+          expires: session.expires,
+          sessionToken: session.session_token,
+        },
+        user: {
+          id: user.id,
+          name: user.name,
+          username: user.username,
+          email: user.email!,
+          avatar_url: user.avatar_url!,
+          emailVerified: null,
+        },
+      }
+    },
 
     async updateSession({ sessionToken }) {},
 
