@@ -2,9 +2,11 @@
 import { Adapter } from 'next-auth/adapters'
 import { prisma } from '../prisma'
 
-async function PrismaAdapter(): Adapter {
+export async function PrismaAdapter(): Adapter {
   return {
-    async createUser(user) {},
+    async createUser(user) {
+      return null
+    },
 
     async getUser(id) {
       const user = await prisma.user.findFirstOrThrow({
@@ -168,8 +170,8 @@ async function PrismaAdapter(): Adapter {
 
     // async deleteSession(sessionToken) {},
 
-    async createVerificationToken({ identifier, expires, token }) {},
+    // async createVerificationToken({ identifier, expires, token }) {},
 
-    async useVerificationToken({ identifier, token }) {},
+    // async useVerificationToken({ identifier, token }) {},
   }
 }
