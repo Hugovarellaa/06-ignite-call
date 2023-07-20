@@ -1,7 +1,6 @@
 import { Text } from '@ignite-ui/react'
 import Head from 'next/head'
 
-
 export default function Home() {
   return (
     <>
@@ -12,9 +11,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.png" />
       </Head>
 
-     <div>
-      <Text>Hello World</Text>
-     </div>
+      <div>
+        <Text>Hello World</Text>
+      </div>
     </>
   )
 }
