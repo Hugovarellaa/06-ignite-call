@@ -1,3 +1,4 @@
+import { Text } from '@ignite-ui/react'
 import Head from 'next/head'
 
 
@@ -12,7 +13,7 @@ export default function Home() {
       </Head>
 
      <div>
-      <h1>Hello World</h1>
+      <Text>Hello World</Text>
      </div>
     </>
   )
