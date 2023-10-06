@@ -1,7 +1,0 @@
-/*.js
-*.d.ts
-.next
-node_modules
-dist
-build
-/.yaml
